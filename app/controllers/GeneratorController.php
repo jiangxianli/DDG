@@ -56,6 +56,15 @@ class GeneratorController extends BaseController
             ];
         }
 
+        $data['database'] = strtolower($data['database']);
+        //非法数据库名检测
+        if (in_array($data['database'], ['information_schema', 'performance_schema', 'mysql'])) {
+            return [
+                'status' => 0,
+                'msg'    => '为保证数据库安全，此数据库名被限制！'
+            ];
+        }
+
         //数据库是否存在检测
         $sql            = "select count(*) as count from information_schema.TABLES where TABLE_SCHEMA = ?";
         $exist_database = $connection->select($sql, [$data['database']]);
