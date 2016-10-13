@@ -7,6 +7,12 @@ body {
 table {
   table-layout: fixed; }
 
+.document-title h4 {
+  width: 100%;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold; }
+
 .table-title {
   width: 100%;
   height: 50px;
@@ -40,7 +46,7 @@ table {
   height: auto;
   overflow: hidden;
   margin: 0px auto; }
-  .generator table td, .generator table th {
+  .generator table > tbody > tr td, .generator table > tbody > tr th {
     border: 1px solid #000; }
 
 .quick-find {

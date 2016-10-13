@@ -30,5 +30,13 @@
         generator.html('');
     });
 
+    $(document).on('click', 'button.btn-word', function () {
+
+        var form = $(this).closest('form');
+        window.location.href = '/word?'+form.serialize()
+    });
+
+
+
 
 })(jQuery);

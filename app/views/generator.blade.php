@@ -19,6 +19,8 @@
     <link href="/css/app.css" rel="stylesheet">
     <script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
     <script src="/js/lobibox.js"></script>
+    {{--<script src="/js/FileSaver.js"></script>--}}
+    {{--<script src="/js/jquery.wordexport.js"></script>--}}
     <script src="/js/app.js"></script>
 
 </head>
@@ -26,27 +28,32 @@
     <div class="left-menu">
         <form role="form">
             <div class="form-group">
-                <label for="exampleInputEmail1">Host</label>
+                <label for="exampleInputEmail1">数据库地址</label>
                 <input name="host" type="text" class="form-control"  placeholder="数据库连接主机地址">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">UserName</label>
+                <label for="exampleInputPassword1">用户名</label>
                 <input name="username" type="text" class="form-control" placeholder="数据库用户名">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
+                <label for="exampleInputPassword1">密码</label>
                 <input name="password" type="password" class="form-control" value="" placeholder="数据库密码">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">DataBase</label>
+                <label for="exampleInputPassword1">数据库名</label>
                 <input name="database" type="text" class="form-control" placeholder="数据库名">
             </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">文档名称</label>
+                <input name="document_name" type="text" class="form-control" placeholder="导出的docx文件名，默认为数据库字典">
+            </div>
             <button type="button" class="btn btn-default btn-generate">生成字典</button>
-            <button type="button" class="btn btn-default btn-clear">清除字典</button>
+            {{--<button type="button" class="btn btn-default btn-clear">清除字典</button>--}}
+            <button type="button" class="btn btn-default btn-word">生成word</button>
         </form>
     </div>
 
-    <div style="height: 100px;"></div>
+    <div style="height: 40px;"></div>
 
     <div class="help">
         <div class="panel panel-default">
@@ -68,5 +75,13 @@
    <div class="generator">
 
    </div>
+
+   @if($errors->first())
+       <script>
+           Lobibox.notify('error', {
+               msg: "{{ $errors->first() }}"
+           });
+       </script>
+   @endif
 </body>
 </html>

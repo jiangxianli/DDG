@@ -1,5 +1,5 @@
 <div class="document-title">
-
+    <h4> {{ $title }}</h4>
 </div>
 <div class="table-list">
     <div class="table-title">
