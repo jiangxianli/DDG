@@ -8,3 +8,11 @@
 ![Alt text](/public/images/1.png)
 ![Alt text](/public/images/2.png)
 
+##注意
+> - 项目如果部署在Linux服务器，可能会出现使用IP地址数据库时出现连接失败，请禁用
+SELinux:
+```shell
+    /usr/sbin/setenforce 0 立刻关闭 SELINUX
+    /usr/sbin/setenforce 1 立刻启用 SELINUX
+```
+

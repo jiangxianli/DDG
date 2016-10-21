@@ -298,7 +298,7 @@ class GeneratorController extends BaseController
         } catch (Exception $exception) {
             return [
                 'status' => 0,
-                'msg'    => '数据库连接失败，请检查配置信息！'
+                'msg'    => "数据库连接失败，请检查配置信息！<br>Error:".$exception->getMessage()
             ];
         }
 
