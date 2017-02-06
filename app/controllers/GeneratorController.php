@@ -158,7 +158,7 @@ class GeneratorController extends BaseController
         foreach ($rows as $key => $row) {
             $table->addRow();
             $table->addCell($cell_width[0])->addText($row['table_code'], $cell_font, $styleParagraph);
-            $table->addCell($cell_width[1])->addText($row['table_code'], $cell_font, $styleParagraph);
+            $table->addCell($cell_width[1])->addText($row['table_name'], $cell_font, $styleParagraph);
             $table->addCell($cell_width[2])->addText($row['table_comment'], $cell_font, $styleParagraph);
 
         }
